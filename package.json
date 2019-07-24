@@ -1,0 +1,33 @@
+{
+  "name": "use-clutch",
+  "version": "1.0.0",
+  "description": "You can manage all data asynchronously.",
+  "main": "./lib/index.js",
+  "types": "./index.d.ts",
+  "author": "uttk <uttk8128@gmail> (https://github.com/uttk)",
+  "keywords": [
+    "use-clutch"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uttk/use-clutch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uttk/use-clutch.git"
+  },
+  "files": [
+    "lib",
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.23",
+    "typescript": "^3.5.2"
+  }
+}

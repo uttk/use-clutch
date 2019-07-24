@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "10"
+before_deploy:
+  - yarn build
+deploy:
+  provider: npm
+  email: uttk8128@gmail.com
+  skip_cleanup: true
+  on:
+    tags: true
+  api_key:
+    secure: N0YeJJSRG9VfB+akxIqk9aJ+RkuAv4lmSp/NYk4hjdWm808xWnh/rE/7NjeMJ46g9dFsIb/sIj7u57/DxvKcxbQL7DfjKY3+QVFd1hHz4fhcLKQA0g0Mt/OdCkcFlme7mIi4M6kIpCv9iUF7NWuXYfA5m28CMDIZmU/iNrweZ3pUarcv7nWKKFoBArYsH/tgoyfU520ZQelCr3lJe5sQ7hfQg6nqD4InAmkJlmhIyRbqGw0z0n6cFNUvwQo63iHPSeAnvXswN2gS5yEQMB0KAEpHBHzgPKyOMZLmU7FWiVbbJl2ePb3E1P96Iebub/RHuq6+laRSUJWidliSQOkvVcn75B2qqYqKFgnY7fw7qvAbW7hhwlLoZALko+VLwOuaA0z9JZgNxRT0vmtaAh1m3qh/++4sDjemAe0M5jPK2m4bYfylFduGJ1u0vuEagyha12zg1eweiwrCLtGHsO83jXfIgxD8jSY2RLy4YfefU0vJqsvo52G+AzhMFSQPtoLca66d5aEjVEki9gMCAHUHwWhv4KCn/3fyD0F+ZwmpqBuwEYZyHpBQCQ6ukeRRMeWasxkubHPhZt3fxada3T0UOWRFVHOvoAXwXVIuG7iczpj/zjZTrt4OWBVnMXwaNc6monkDEjVrkm9SXYJapQyS79eedDD6LGRSvovj9u1B7WA=

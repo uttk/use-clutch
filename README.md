@@ -115,6 +115,19 @@ const clutch = useClutch(asyncReducer, initialValue);
   - Description : Clutch Object.
   - Type : `object`
 
+## state
+
+You can access to latest state value.
+
+```javascript
+const clutch = useClutch(asyncReducer, initialValue);
+const latest_state = clutch.state;
+```
+
+- `latest_state`
+  - Description : Latest State Value.
+  - Type : `{ [key:string] : any }`
+
 ## dispatch
 
 Dispatch action. However, if the processing of the same request is in progress, it does not dispatch action.

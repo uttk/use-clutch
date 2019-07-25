@@ -82,6 +82,10 @@ const App: React.FC = () => {
 render(<App />, document.getElementById("app"));
 ```
 
+# Playground
+
+[https://codesandbox.io/embed/use-clutch-playground-wnmyx](https://codesandbox.io/embed/use-clutch-playground-wnmyx)
+
 # Reference
 
 ## useClutch
@@ -248,7 +252,7 @@ const unsubscribe = clutch.listenRequest(listener);
   - Description : Function to cancel monitoring.
   - Type : `() => void`
 
-## isLoading
+## isProgress
 
 Returns whether the passed request is in progress or not.
 

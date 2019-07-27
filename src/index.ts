@@ -174,6 +174,12 @@ const useClutch = <R extends Reducer<any, any>>(
         req: string,
         promiseCreator: () => Promise<T>
       ): Promise<T | null> => {
+        const progress = progressPromise.get(req);
+
+        if (progress) {
+          return progress;
+        }
+
         return resolveAsync<T>(req, promiseCreator);
       },
 
@@ -200,19 +206,19 @@ const useClutch = <R extends Reducer<any, any>>(
         const promise = progressPromise.get(request);
 
         if (promise) {
-          return;
+          return promise;
         }
 
-        const promiseCreator = async (oldState: StoreType) => {
+        const promiseCreator = async (state: StoreType) => {
           for (const fn of funcs) {
-            const action = fn(oldState);
+            const action = fn(state);
 
             if (action) {
-              oldState = await asyncReducer(oldState, action);
+              state = await asyncReducer(state, action);
             }
           }
 
-          return oldState;
+          return state;
         };
 
         await updateState(request, { ...clutch.state }, promiseCreator);
@@ -222,7 +228,7 @@ const useClutch = <R extends Reducer<any, any>>(
         const promise = progressPromise.get(request);
 
         if (promise) {
-          return;
+          return promise;
         }
 
         const promiseCreator = (oldState: StoreType) => {
